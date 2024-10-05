@@ -1,13 +1,14 @@
 import express from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';
+import dotenv from 'dotenv'
 import cors from 'cors';
 
 import * as middlewares from './middlewares';
 import api from './api';
 import MessageResponse from './interfaces/MessageResponse';
 
-require('dotenv').config();
+dotenv.config();
 
 const app = express();
 
