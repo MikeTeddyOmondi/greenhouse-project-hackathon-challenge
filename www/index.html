@@ -42,19 +42,14 @@
           Uncover the Role of Greenhouse Gases in Your Neighborhood!
         </p>
       </div>
-
       <div class="search">
-        <input type="text" placeholder="key words to get output........." />
-        <button>search</button>
+        <input type="text" placeholder="key words to get output........." id="country"/>
+        <button onclick="fetchData()">search</button>
       </div>
     </section>
 
     <section>
-
-        <div>
-          <canvas id="myChart">Bar Chart</canvas>
-        </div>
-
+        <canvas id="co2Chart" width="400" height="200"></canvas>
     </section>
 
     <footer>
@@ -62,15 +57,7 @@
       <hi>2024</hi>
     </footer>
 
-    <!-- <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"
-      integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script> -->
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <script src="script.js"></script>
   </body>
 </html>

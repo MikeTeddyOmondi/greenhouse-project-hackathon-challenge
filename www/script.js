@@ -14,25 +14,62 @@ window.onscroll = function () {
   }
 };
 
-const ctx = document.getElementById("myChart");
+  let co2Chart; // Reference to the chart instance
 
-new Chart(ctx, {
-  type: "bar",
-  data: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    datasets: [
-      {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1,
+  async function fetchData() {
+    try {
+      const country = document.getElementById('country').value; // Get country from input
+
+      // Fetch data for the specific country
+      const response = await fetch(`/api/data?country=${encodeURIComponent(country)}`);
+      if (!response.ok) {
+        throw new Error('No data found for the selected country.');
+      }
+      const data = await response.json();
+
+      // Extract relevant fields (year and CO2 emissions)
+      const years = data.message.map(item => item.Year);
+      const emissions = data.message.map(item => parseFloat(item['Per capita consumption-based CO₂ emissions']));
+
+      // Call function to create the chart
+      createChart(years, emissions);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      alert(error.message);  // Show alert if there's an error (e.g., no data found)
+    }
+  }
+
+  function createChart(labels, data) {
+    const ctx = document.getElementById('co2Chart').getContext('2d');
+
+    // Destroy the previous chart instance if it exists
+    if (co2Chart) {
+      co2Chart.destroy();
+    }
+
+    // Create a new chart instance
+    co2Chart = new Chart(ctx, {
+      type: 'line', // You can change this to 'bar', 'pie', etc.
+      data: {
+        labels: labels,  // Years will be displayed on the x-axis
+        datasets: [{
+          label: 'Per Capita CO₂ Emissions',
+          data: data,  // Emissions data for the y-axis
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderWidth: 1,
+          fill: true
+        }]
       },
-    ],
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  },
-});
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true  // Ensure the y-axis starts at 0
+          }
+        }
+      }
+    });
+  }
+
+  // Initial chart creation with no data
+  createChart([], []);

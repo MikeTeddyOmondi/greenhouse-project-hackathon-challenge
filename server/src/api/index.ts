@@ -9,13 +9,17 @@ const router = express.Router();
 
 router.get<{}, any>('/data', async (req, res) => {
   const csvFilePath = "./consumption-co2-per-capita-dataset.csv";
+  const country = req.query.country as string;
 
   // Async / await usage
   const csvJsonData = await csv().fromFile(csvFilePath); // parsed as an array
-  console.log({ csvJsonData })
+
+  const filteredData = csvJsonData.filter(item => item.Entity === country);
+
+  // console.log({ csvJsonData })
 
   res.json({
-    message: csvJsonData,
+    message: filteredData,
   });
 });
 
