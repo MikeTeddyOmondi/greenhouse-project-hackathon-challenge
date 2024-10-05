@@ -12,7 +12,9 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
+const staticPath = path.join(__dirname, '../../www');
+app.use(express.static(staticPath));
+
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(cors());
@@ -21,7 +23,7 @@ app.use(express.json());
 app.get<{}, any>('/', (req, res) => {
   // res.json({message: "🦄🌈✨👋🌎🌍🌏✨🌈🦄",});
 
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(staticPath, 'index.html'));
 });
 
 
