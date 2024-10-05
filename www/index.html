@@ -1,54 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Greenhouse Effects</title>
-  <link rel="icon" href="logo-no-background.png" type="image/x-icon">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <h1>
-      <a  href="#">
-        <img src="logo-no-background.png" class="logo" alt="" height="50" width="70">
-        <p>Greenhouse Effect</p>
-      </a>
-    </h1>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#">about</a></li>
-        <li><a href="#">feedback</a></li>
-      </ul>
-      <div class="burger">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </nav>
-  </header>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greenhouse Effects</title>
+    <link rel="icon" href="logo-no-background.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="#">
+          <img
+            src="logo-no-background.png"
+            class="logo"
+            alt=""
+            height="50"
+            width="70"
+          />
+          <p>Greenhouse Effect</p>
+        </a>
+      </h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">about</a></li>
+          <li><a href="#">feedback</a></li>
+        </ul>
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </nav>
+    </header>
 
     <section class="about">
       <div class="center-about">
-      <h2>ABOUT SECTION</h2>
-      <p>The about section and the idea behind the idea for greenhouse to Uncover the Role of Greenhouse Gases in Your Neighborhood!</p>
+        <h2>ABOUT SECTION</h2>
+        <p>
+          The about section and the idea behind the idea for greenhouse to
+          Uncover the Role of Greenhouse Gases in Your Neighborhood!
+        </p>
       </div>
 
-
-    <div class="search">
-      <input type="text" placeholder="key words to get output.........">
-      <button>search</button>
-    </div>
+      <div class="search">
+        <input type="text" placeholder="key words to get output........." />
+        <button>search</button>
+      </div>
     </section>
 
+    <section>
 
+        <div>
+          <canvas id="myChart">Bar Chart</canvas>
+        </div>
 
-  <footer>
-    <p>GREENHOUSE.EFFECTS.CO.KE</p>
-    <hi>2024</hi>
-  </footer>
+    </section>
 
-  <script src="script.js"></script>
-</body>
+    <footer>
+      <p>GREENHOUSE.EFFECTS.CO.KE</p>
+      <hi>2024</hi>
+    </footer>
+
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"
+      integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="script.js"></script>
+  </body>
 </html>
