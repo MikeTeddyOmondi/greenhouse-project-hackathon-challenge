@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greenhouse Effect Tracker</title>
+    <link rel="icon" href="img/logo-no-background.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="#">
+          <img
+            src="img/logo-no-background.png"
+            class="logo"
+            alt=""
+            height="50"
+            width="70"
+            onfocus="removeBarChartDiv()"
+          />
+          <p>Greenhouse Effect Tracker</p>
+        </a>
+      </h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Feedback</a></li>
+        </ul>
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="about">
+      <div class="center-about">
+        <h2>Hi!</h2>
+        <p>
+          The idea behind the this is for users to check the greenhouse
+          emissions per country. Uncover the Role of Greenhouse Gases in Your
+          Neighborhood!
+        </p>
+      </div>
+      <div class="search">
+        <input
+          type="text"
+          placeholder="Check CO2 emissions for your country..."
+          id="country"
+          onemptied="removeBarChartDiv()"
+        />
+        <button onclick="fetchData()">search</button>
+      </div>
+      <div class="barchart-div">
+        <canvas
+          id="co2Chart"
+          class="barchart-canvas"
+          width="280"
+          height="100"
+        ></canvas>
+      </div>
+    </section>
+
+    <footer>
+      <p>Greenhouse Effect Tracker. All Rights Reserved.</p>
+      <hi>2024</hi>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
