@@ -6,6 +6,8 @@
     <title>Greenhouse Effects</title>
     <link rel="icon" href="./logo-no-background.png" type="image/x-icon" />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.25/"></script>
   </head>
   <body>
     <header>
@@ -47,9 +49,16 @@
         <button onclick="fetchData()">search</button>
       </div>
     </section>
-
+    <style>
+        html, body, #viewDiv {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      </style>
     <section>
-        <canvas id="co2Chart" width="400" height="200"></canvas>
+        <!-- <div id="viewDiv"></div> -->
+        <div id="viewDiv"></div>
     </section>
 
     <footer>
