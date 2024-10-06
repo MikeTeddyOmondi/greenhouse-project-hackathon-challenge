@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greenhouse Effect Tracker</title>
+    <link rel="icon" href="img/logo-no-background.png" type="image/x-icon" />
+    <link rel="stylesheet" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="index.html">
+          <img
+            src="img/logo-no-background.png"
+            class="logo"
+            alt=""
+            height="50"
+            width="70"
+            onfocus="removeBarChartDiv()"
+          />
+          <p>Greenhouse Effect Tracker</p>
+        </a>
+      </h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="recomendation.html" class="AIRecommendations" style="color:black;"><i class="fas fa-robot" ></i> AI Recommendation</a></li>
+        </ul>
+
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="feedback">
+        <div class="center-feedback">
+          <h2>Hello, We would like to hear from you!</h2>
+        </div>
+        <span class="search">
+          <input type="text" placeholder="Name" /><br />
+          <input type="email" placeholder="Email" /><br />
+          <input type="text" placeholder="Comment..." /><br />
+          <button class="send">Send</button>
+        </span>
+      </section>     
+      
+
+    <footer>
+      <p>Greenhouse Effect Tracker. All Rights Reserved.</p>
+      <hi>2024</hi>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

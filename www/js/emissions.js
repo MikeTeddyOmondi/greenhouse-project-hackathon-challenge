@@ -4,7 +4,9 @@ const countryInput = document.querySelector("country");
 const barChartDiv = document.querySelector(".barchart-div");
 const filteredChartDiv = document.querySelector(".filterchart-div");
 
-const filterDataByYearBtn = document.getElementById("filterDataByYear");
+const filterDataByYearCountryBtn = document.getElementById(
+  "filterDataByYearCountry"
+);
 
 let co2Chart; // Reference to the chart instance
 let filteredChart;
@@ -13,9 +15,9 @@ burger.addEventListener("click", () => {
   navLinks.classList.toggle("nav-active");
 });
 
-filterDataByYearBtn.addEventListener("click", () => {
-  filterData()
-})
+filterDataByYearCountryBtn.addEventListener("click", () => {
+  filterData();
+});
 
 window.onscroll = function () {
   const header = document.querySelector("header");
@@ -26,6 +28,7 @@ window.onscroll = function () {
   }
 };
 
+<<<<<<< HEAD
 async function fetchData() {
   try {
     const country = document.getElementById("country").value; // Get country from input
@@ -89,31 +92,39 @@ function createChart(labels, data) {
     },
   });
 }
+=======
+// let co2Chart; // Reference to the chart instance
+let filteredChart;
+>>>>>>> c82132f656017811cffd3600128ca1e0d3034ef1
 
 function removeBarChartDiv() {
   barChartDiv.style.display = "none";
 }
-
-// Initial chart creation with no data
-// createChart([], []);
-
 
 async function filterData() {
   try {
     const country = document.getElementById("country").value; // Get country from input
     const year = document.getElementById("year").value;
     // Fetch data for the specific country
+<<<<<<< HEAD
     console.log({year}, {country})
+=======
+    console.log({ year });
+>>>>>>> c82132f656017811cffd3600128ca1e0d3034ef1
     const response = await fetch(
-      `http://localhost:3000/api/emissions-by-sector?year=${encodeURIComponent(year)}&country=${encodeURIComponent(country)}`
+      `http://localhost:3000/api/emissions-by-sector?year=${encodeURIComponent(
+        year
+      )}&country=${encodeURIComponent(country)}`
     );
 
     if (!response.ok) {
       throw new Error("No data found for the selected country.");
     }
     const data = await response.json();
+    console.log({ data });
 
     // Extract relevant fields (year and CO2 emissions)
+<<<<<<< HEAD
     const years = data.message.map((item) => item.Entity);
     const emissionKeys = [
       "agriculture and land use",
@@ -124,15 +135,26 @@ async function filterData() {
       "CO2 emissions from agriculture and land use",
     ];
 
+=======
+    const years = data.message.map((item) => {
+      console.log(item);
+      return item.Year;
+    });
+>>>>>>> c82132f656017811cffd3600128ca1e0d3034ef1
     const emissions = data.message.map((item) => [
       parseFloat(item["agriculture and land use"]),
       parseFloat(item["fossil fuels and industry"]),
       parseFloat(item["methane emissions from fossil fuels and industry"]),
       parseFloat(item["methane emissions from agriculture and land use"]),
       parseFloat(item["CO2 emissions from fossil fuels and industry"]),
+<<<<<<< HEAD
       parseFloat(item["CO2 emissions from agriculture and land use"]),]
+=======
+      parseFloat(item["CO2 emissions from agriculture and land use"]),
+    ]);
+>>>>>>> c82132f656017811cffd3600128ca1e0d3034ef1
 
-    );
+    // console.log({ emissions });
 
     let emissionsChart;
     function createEmissionsChart(years, emissions) {
@@ -215,6 +237,72 @@ async function filterData() {
   }
 }
 
+<<<<<<< HEAD
+=======
+function createFilterChart(labels, data) {
+  const ctx = document.getElementById("filteredChart").getContext("2d");
+
+  filteredChartDiv.style.display = "block";
+
+  // Destroy the previous chart instance if it exists
+  if (filteredChart) {
+    filteredChart.destroy();
+  }
+
+  console.log({ Chart });
+  console.log(new Chart(ctx));
+
+  // Create a new chart instance
+  filteredChart = new Chart(ctx, {
+    type: "line", // You can change this to 'bar', 'pie', etc.
+    data: {
+      labels: labels, // Years will be displayed on the x-axis
+      datasets: [
+        {
+          label: "Emissions",
+          data: data, // Emissions data for the y-axis
+          borderColor: [
+            "rgba(75, 192, 192, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(75, 192, 192, 1)",
+          ],
+          backgroundColor: [
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+          ],
+          borderWidth: 1,
+          fill: true,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: "Emission Bi.T Numbers",
+          },
+        },
+        y: {
+          stacked: true,
+          title: {
+            display: true,
+            text: "Year",
+          },
+        },
+      },
+    },
+  });
+}
+
+>>>>>>> c82132f656017811cffd3600128ca1e0d3034ef1
 function removefilteredChartDiv() {
   filteredChartDiv.style.display = "none";
 }

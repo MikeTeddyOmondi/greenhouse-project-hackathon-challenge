@@ -3,19 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
     <title>Greenhouse Effects</title>
     <link rel="icon" href="./logo-no-background.png" type="image/x-icon" />
     <link rel="stylesheet" href="./styles.css" />
     <title>Greenhouse Effect Tracker</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+=======
+    <title>Greenhouse Effect Tracker</title>
+>>>>>>> c82132f656017811cffd3600128ca1e0d3034ef1
     <link rel="icon" href="img/logo-no-background.png" type="image/x-icon" />
-    <link rel="stylesheet" href="css/styles.css" />
-      <!-- AAPTxy8BH1VEsoebNVZXo8HurJH_eyO1hAprhHQdrr34iEL8qaxFrUn_ijfNCPheylXbV7M8hcdO4duvc7AqGZIGQz9Za9AbaJG-k9mYbuXXOaOqAFcfQ57KfNl_tPLHt0jObC3kQ8si4gxfiSKuQj42qg0_eak_KuCGRyBjM0nfDSOkh5BIzUb5FJrQ54-34HNX2Dj6RrGGLdM5pT0r4RKRIkjP_zpo-11SeLfE0bBhGf4.AT1_pcnTnX99 -->
+    <link rel="stylesheet" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
   </head>
   <body background="black">
     <header>
       <h1>
-        <a href="#">
+        <a href="index.html">
           <img
             src="img/logo-no-background.png"
             class="logo"
@@ -29,9 +35,11 @@
       </h1>
       <nav>
         <ul class="nav-links">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Feedback</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="recomendation.html" class="AIRecommendations" style="color:black;"><i class="fas fa-robot" ></i> AI Recommendation</a></li>
         </ul>
+
         <div class="burger">
           <div></div>
           <div></div>
@@ -44,11 +52,11 @@
       <div class="center-about">
         <h2>Hi!</h2>
         <p>
-          The idea behind the this is for users to check the greenhouse
-          emissions per country. Uncover the Role of Greenhouse Gases in Your
-          Neighborhood!
+          Greenhouse gases are purging the Earth's atmosphere. Check how your neighbourhood is doing and champion for a difference today. <br>
+        Change starts with  you!
         </p>
       </div>
+<<<<<<< HEAD
       <div class="searchDiv">
         <div class="search">
           <input
@@ -75,11 +83,23 @@
         </div>
       </div>
 
+=======
+      <div class="search">
+        <input
+          type="text"
+          placeholder="Check CO2 emissions for your country..."
+          id="country"
+          onemptied="removeBarChartDiv()"
+        />
+        <button onclick="fetchData()">search</button>
+      </div>
+>>>>>>> c82132f656017811cffd3600128ca1e0d3034ef1
       <div class="barchart-div">
         <canvas
           id="co2Chart"
           class="barchart-canvas"
           width="280"
+<<<<<<< HEAD
           height="100"
         ></canvas>
       </div>
@@ -90,15 +110,20 @@
           class="barchart-canvas"
           width="280"
           height="100"
+=======
+          height="90"
+>>>>>>> c82132f656017811cffd3600128ca1e0d3034ef1
         ></canvas>
         <canvas id="emissionsChart" width="400" height="400"></canvas>
       </div>
     </section>
+
     <footer>
       <p>Greenhouse Effect Tracker. All Rights Reserved.</p>
       <hi>2024</hi>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/emissions.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

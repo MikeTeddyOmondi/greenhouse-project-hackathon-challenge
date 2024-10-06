@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greenhouse Effect Tracker</title>
+    <link rel="icon" href="img/logo-no-background.png" type="image/x-icon" />
+    <link rel="stylesheet" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="index.html">
+          <img
+            src="img/logo-no-background.png"
+            class="logo"
+            alt=""
+            height="50"
+            width="70"
+            onfocus="removeBarChartDiv()"
+          />
+          <p>Greenhouse Effect Tracker</p>
+        </a>
+      </h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="recomendation.html" class="AIRecommendations" style="color:black;"><i class="fas fa-robot" ></i> AI Recommendation</a></li>
+        </ul>
+
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="emission-sources">
+        <div class="content-wrapper">
+            <div class="image-container">
+                <img src="img/emisionMap.png" alt="Emission Map">
+            </div>
+            <div class="info-container">
+                <div class="info-box">
+                    <div class="number">1</div>
+                    <div class="text">
+                        <h3>Energy Production</h3>
+                        <p>Fossil fuel-based power generation is a major contributor to global greenhouse gas emissions.</p>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <div class="number">2</div>
+                    <div class="text">
+                        <h3>Transportation</h3>
+                        <p>Emissions from vehicles, aviation, and shipping account for a significant portion of human-caused greenhouse gases.</p>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <div class="number">3</div>
+                    <div class="text">
+                        <h3>Industrial Processes</h3>
+                        <p>Manufacturing, mining, and other industrial activities generate substantial greenhouse gas emissions.</p>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <div class="number">4</div>
+                    <div class="text">
+                        <h3>Natural Greenhouse Gases</h3>
+                        <p>Natural sources, such as wetlands and volcanoes, contribute to greenhouse gas emissions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+      <p>Greenhouse Effect Tracker. All Rights Reserved.</p>
+      <hi>2024</hi>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
