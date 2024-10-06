@@ -41,7 +41,7 @@ router.get<{}, any>('/emissions-by-sector', async (req, res) => {
 
   res.json({
     // message: perSectorCsvJson,
-    message: filtered,
+    message: country && year ? filtered : perSectorCsvJson ,
   });
 });
 

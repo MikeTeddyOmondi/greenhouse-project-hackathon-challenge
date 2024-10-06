@@ -6,15 +6,13 @@
     <title>Greenhouse Effects</title>
     <link rel="icon" href="./logo-no-background.png" type="image/x-icon" />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/css/main.css">
-    <script src="https://js.arcgis.com/4.25/"></script>
     <title>Greenhouse Effect Tracker</title>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="icon" href="img/logo-no-background.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/styles.css" />
       <!-- AAPTxy8BH1VEsoebNVZXo8HurJH_eyO1hAprhHQdrr34iEL8qaxFrUn_ijfNCPheylXbV7M8hcdO4duvc7AqGZIGQz9Za9AbaJG-k9mYbuXXOaOqAFcfQ57KfNl_tPLHt0jObC3kQ8si4gxfiSKuQj42qg0_eak_KuCGRyBjM0nfDSOkh5BIzUb5FJrQ54-34HNX2Dj6RrGGLdM5pT0r4RKRIkjP_zpo-11SeLfE0bBhGf4.AT1_pcnTnX99 -->
   </head>
-  <body>
+  <body background="black">
     <header>
       <h1>
         <a href="#">
@@ -51,24 +49,30 @@
           Neighborhood!
         </p>
       </div>
-      <div class="search">
-        <input
-          type="text"
-          placeholder="Check CO2 emissions for your country..."
-          id="country"
-          onemptied="removeBarChartDiv()"
-        />
-        <button onclick="fetchData()">search</button>
-      </div>
+      <div class="searchDiv">
+        <div class="search">
+          <input
+            type="text"
+            placeholder="Enter your country..."
+            id="country"
+            onemptied="removeBarChartDiv()"
+          />
+          <!-- <button onclick="filterData()">search</button> -->
+        </div>
 
-      <div class="search">
-        <input
-          type="text"
-          placeholder="Enter year ..."
-          id="year"
-          onemptied="removefilteredChartDiv()"
-        />
-        <button id="filterDataByYear">Search</button>
+        <div class="search">
+          <input
+            type="text"
+            placeholder="Enter a year..."
+            id="year"
+            onemptied="removefilteredChartDiv()"
+          />
+          <!-- <button id="filterDataByYear">Search</button> -->
+        </div>
+
+        <div class="search">
+          <button onclick="filterData()">Search</button>
+        </div>
       </div>
 
       <div class="barchart-div">
@@ -82,11 +86,12 @@
 
       <div class="filterchart-div">
         <canvas
-          id="filteredChart"
+          id=""
           class="barchart-canvas"
           width="280"
           height="100"
         ></canvas>
+        <canvas id="emissionsChart" width="400" height="400"></canvas>
       </div>
     </section>
     <footer>
