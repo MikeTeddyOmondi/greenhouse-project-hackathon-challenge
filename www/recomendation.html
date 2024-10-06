@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greenhouse Effect Tracker</title>
+    <link rel="icon" href="img/logo-no-background.png" type="image/x-icon" />
+    <link rel="stylesheet" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="index.html">
+          <img
+            src="img/logo-no-background.png"
+            class="logo"
+            alt=""
+            height="50"
+            width="70"
+            onfocus="removeBarChartDiv()"
+          />
+          <p>Greenhouse Effect Tracker</p>
+        </a>
+      </h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="recomendation.html" class="AIRecommendations" style="color:black;"><i class="fas fa-robot" ></i> AI Recommendation</a></li>
+        </ul>
+
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </nav>
+    </header>
+    
+    <section class="ai-recommendations">
+        <h2>Solutions for mitigating  the Greenhouse Effect</h2>
+        <ul class="recommendations-list">
+            <li>
+              <i class="fas fa-robot"></i>
+              <div>
+                <h3>Carpooling</h3>
+                <p>Reduce the number of vehicles on the road by sharing rides with others, lowering fuel consumption and emissions.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-robot"></i> 
+              <div>
+                <h3>E-Bikes</h3>
+                <p>Switching to electric bikes reduces reliance on gasoline-powered vehicles, cutting down greenhouse gas emissions significantly.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-robot"></i> 
+              <div>
+                <h3>Ride-Sharing</h3>
+                <p>Using ride-sharing services helps reduce the number of cars on the road, leading to fewer emissions per person transported.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-robot"></i> 
+              <div>
+                <h3>Utilizing Solar Chargers</h3>
+                <p>Charging devices using solar power reduces dependence on fossil fuel-generated electricity, cutting down CO2 emissions.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-robot"></i> 
+              <div>
+                <h3>Diet Changes</h3>
+                <p>Shifting to plant-based diets can reduce methane emissions from livestock and lower the carbon footprint of food production.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-robot"></i> 
+              <div>
+                <h3>Energy-Efficient Appliances</h3>
+                <p>Switching to energy-efficient appliances reduces electricity consumption, lowering the demand for fossil fuel-generated power and cutting emissions.</p>
+              </div>
+            </li>
+          </ul>
+          
+      </section>
+      
+
+    <footer>
+      <p>Greenhouse Effect Tracker. All Rights Reserved.</p>
+      <hi>2024</hi>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
