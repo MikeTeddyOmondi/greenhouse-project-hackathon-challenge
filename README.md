@@ -4,7 +4,7 @@ This project explores the complex challenge of mapping greenhouse gas emissions 
 
 The idea behind the this is for users to check the greenhouse emissions per country. Uncover the Role of Greenhouse Gases in Your Neighborhood!
 
-## Tech Stach
+## Tech Stack
 The languages and framworks that were used were;
 
  - nodeJs
