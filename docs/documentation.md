@@ -1,4 +1,4 @@
-# Greenhouse Effect Tracker
+# Project Development
 
 This project explores the complex challenge of mapping greenhouse gas emissions using satellite and model-based datasets to address climate change and to enable better understanding of how these emissions contribute to a warmer world.
 
