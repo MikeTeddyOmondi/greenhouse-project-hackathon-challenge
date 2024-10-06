@@ -17,14 +17,23 @@ router.get<{}, any>('/data', async (req, res) => {
   });
 });
 
-router.get<{}, any>('/emissions-by-sector', async (req, res) => {
-  const perSectorCsv = "./data/co2-emissions-by-sector.csv";
+router.get<{}, any>('/emissions-by-sector/:year/:country', async (req, res) => {
+
+  const perSectorCsv = "./data/global-warming-by-gas-and-source.csv";
+  // @ts-ignore
+  const year = req.params.year as string;
+  // @ts-ignore
+  const country = req.params.country as string;
+
+  console.log({year, country})
 
   const perSectorCsvJson = await csv().fromFile(perSectorCsv); // parsed as an array
   // console.log({ perSectorCsvJson })
+  const filtered = perSectorCsvJson.filter(item => item.Year === year && item.Entity === country);
 
   res.json({
-    message: perSectorCsvJson,
+    // message: perSectorCsvJson,
+    message: filtered,
   });
 });
 
