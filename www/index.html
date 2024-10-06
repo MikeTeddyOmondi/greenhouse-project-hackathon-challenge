@@ -8,25 +8,29 @@
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/css/main.css">
     <script src="https://js.arcgis.com/4.25/"></script>
+    <title>Greenhouse Effect Tracker</title>
+    <link rel="icon" href="img/logo-no-background.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <header>
       <h1>
         <a href="#">
           <img
-            src="logo-no-background.png"
+            src="img/logo-no-background.png"
             class="logo"
             alt=""
             height="50"
             width="70"
+            onfocus="removeBarChartDiv()"
           />
-          <p>Greenhouse Effect</p>
+          <p>Greenhouse Effect Tracker</p>
         </a>
       </h1>
       <nav>
         <ul class="nav-links">
-          <li><a href="#">about</a></li>
-          <li><a href="#">feedback</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Feedback</a></li>
         </ul>
         <div class="burger">
           <div></div>
@@ -38,15 +42,29 @@
 
     <section class="about">
       <div class="center-about">
-        <h2>ABOUT SECTION</h2>
+        <h2>Hi!</h2>
         <p>
-          The about section and the idea behind the idea for greenhouse to
-          Uncover the Role of Greenhouse Gases in Your Neighborhood!
+          The idea behind the this is for users to check the greenhouse
+          emissions per country. Uncover the Role of Greenhouse Gases in Your
+          Neighborhood!
         </p>
       </div>
       <div class="search">
-        <input type="text" placeholder="key words to get output........." id="country"/>
+        <input
+          type="text"
+          placeholder="Check CO2 emissions for your country..."
+          id="country"
+          onemptied="removeBarChartDiv()"
+        />
         <button onclick="fetchData()">search</button>
+      </div>
+      <div class="barchart-div">
+        <canvas
+          id="co2Chart"
+          class="barchart-canvas"
+          width="280"
+          height="100"
+        ></canvas>
       </div>
     </section>
     <style>
@@ -60,13 +78,12 @@
         <!-- <div id="viewDiv"></div> -->
         <div id="viewDiv"></div>
     </section>
-
     <footer>
-      <p>GREENHOUSE.EFFECTS.CO.KE</p>
+      <p>Greenhouse Effect Tracker. All Rights Reserved.</p>
       <hi>2024</hi>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
