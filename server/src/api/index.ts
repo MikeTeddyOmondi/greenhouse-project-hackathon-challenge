@@ -18,13 +18,30 @@ router.get<{}, any>('/data', async (req, res) => {
 });
 
 router.get<{}, any>('/emissions-by-sector', async (req, res) => {
-  const perSectorCsv = "./data/co2-emissions-by-sector.csv";
+
+  const perSectorCsv = "./data/global-warming-by-gas-and-source.csv";
+
+  const year = req.query.year as string;
+  const country = req.query.country as string;
+
+  console.log({year, country})
 
   const perSectorCsvJson = await csv().fromFile(perSectorCsv); // parsed as an array
   // console.log({ perSectorCsvJson })
+  // @ts-ignore
+  let filtered = [];
+  if(!year){
+    filtered = perSectorCsvJson.filter(item => item.Entity === country);
+  }else if(!country){
+    filtered = perSectorCsvJson.filter(item => item.Year === year);
+  }else{
+    filtered = perSectorCsvJson.filter(item => item.Year === year && item.Entity === country);
+  }
+
 
   res.json({
-    message: perSectorCsvJson,
+    // message: perSectorCsvJson,
+    message: filtered,
   });
 });
 

@@ -3,9 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greenhouse Effects</title>
+    <link rel="icon" href="./logo-no-background.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.25/"></script>
     <title>Greenhouse Effect Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <link rel="icon" href="img/logo-no-background.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/styles.css" />
+      <!-- AAPTxy8BH1VEsoebNVZXo8HurJH_eyO1hAprhHQdrr34iEL8qaxFrUn_ijfNCPheylXbV7M8hcdO4duvc7AqGZIGQz9Za9AbaJG-k9mYbuXXOaOqAFcfQ57KfNl_tPLHt0jObC3kQ8si4gxfiSKuQj42qg0_eak_KuCGRyBjM0nfDSOkh5BIzUb5FJrQ54-34HNX2Dj6RrGGLdM5pT0r4RKRIkjP_zpo-11SeLfE0bBhGf4.AT1_pcnTnX99 -->
   </head>
   <body>
     <header>
@@ -53,6 +60,17 @@
         />
         <button onclick="fetchData()">search</button>
       </div>
+
+      <div class="search">
+        <input
+          type="text"
+          placeholder="Enter year ..."
+          id="year"
+          onemptied="removefilteredChartDiv()"
+        />
+        <button id="filterDataByYear">Search</button>
+      </div>
+
       <div class="barchart-div">
         <canvas
           id="co2Chart"
@@ -61,14 +79,21 @@
           height="100"
         ></canvas>
       </div>
-    </section>
 
+      <div class="filterchart-div">
+        <canvas
+          id="filteredChart"
+          class="barchart-canvas"
+          width="280"
+          height="100"
+        ></canvas>
+      </div>
+    </section>
     <footer>
       <p>Greenhouse Effect Tracker. All Rights Reserved.</p>
       <hi>2024</hi>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/emissions.js"></script>
   </body>
 </html>

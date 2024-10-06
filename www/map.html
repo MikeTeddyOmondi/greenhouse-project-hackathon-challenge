@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArcGIS Map with Points from Excel</title>
+  <script src="https://js.arcgis.com/4.24/"></script>
+  <style>
+    #viewDiv {
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="viewDiv"></div>
+
+  <script>
+    require([
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/layers/GraphicsLayer",
+      "esri/Graphic",
+      "esri/symbols/SimpleMarkerSymbol",
+      "esri/geometry/Point",
+      "esri/geometry/SpatialReference"
+    ], function(Map, MapView, GraphicsLayer, Graphic, SimpleMarkerSymbol, Point, SpatialReference) {
+
+      // Step 1: Create the map and add a base layer
+      var map = new Map({
+        basemap: "streets"
+      });
+
+      var view = new MapView({
+        container: "viewDiv",
+        map: map,
+        center: [9.1021, 18.2812],  // Initial center [Longitude, Latitude]
+        zoom: 10
+      });
+
+      // Step 2: Create a GraphicsLayer to hold your points
+      var graphicsLayer = new GraphicsLayer();
+      map.add(graphicsLayer);
+
+      // Step 3: Load your CSV file and parse the points
+      // In this case, you will simulate reading from CSV. You can use real CSV file fetching in production
+      var points = [
+        { lon: 9.1021, lat: 18.2812 },
+       /* { lon: -118.20, lat: 34.10 },
+        { lon: -118.25, lat: 34.15 } */
+      ];
+
+      // Step 4: Loop through the points and add them to the map
+      points.forEach(function(pointData) {
+        var point = new Point({
+          longitude: pointData.lon,
+          latitude: pointData.lat,
+          spatialReference: new SpatialReference({ wkid: 4326 })  // WGS84
+        });
+
+        var pointSymbol = new SimpleMarkerSymbol({
+          color: [226, 119, 40],  // Orange color
+          size: "8px",
+          outline: {
+            color: [255, 255, 255],
+            width: 1
+          }
+        });
+
+        var pointGraphic = new Graphic({
+          geometry: point,
+          symbol: pointSymbol
+        });
+
+        graphicsLayer.add(pointGraphic);
+      });
+    });
+  </script>
+</body>
+</html>
