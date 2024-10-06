@@ -3,14 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
+    <title>Greenhouse Effects</title>
+    <link rel="icon" href="./logo-no-background.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Greenhouse Effect Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+=======
+    <title>Greenhouse Effect Tracker</title>
+>>>>>>> c82132f656017811cffd3600128ca1e0d3034ef1
     <link rel="icon" href="img/logo-no-background.png" type="image/x-icon" />
-    <link rel="stylesheet" 
+    <link rel="stylesheet"
      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
   </head>
-  <body>
+  <body background="black">
     <header>
       <h1>
         <a href="index.html">
@@ -57,13 +65,15 @@
         />
         <button onclick="fetchData()">search</button>
       </div>
+
       <div class="barchart-div">
         <canvas
           id="co2Chart"
           class="barchart-canvas"
           width="280"
-          height="90"
         ></canvas>
+        
+        <canvas id="emissionsChart" width="400" height="400"></canvas>
       </div>
     </section>
 
