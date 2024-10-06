@@ -40,32 +40,18 @@
       </nav>
     </header>
 
-    <section class="about">
-      <div class="center-about">
-        <h2>Hi!</h2>
-        <p>
-          Greenhouse gases are purging the Earth's atmosphere. Check how your neighbourhood is doing and champion for a difference today. <br>
-        Change starts with  you!
-        </p>
-      </div>
-      <div class="search">
-        <input
-          type="text"
-          placeholder="Check CO2 emissions for your country..."
-          id="country"
-          onemptied="removeBarChartDiv()"
-        />
-        <button onclick="fetchData()">search</button>
-      </div>
-      <div class="barchart-div">
-        <canvas
-          id="co2Chart"
-          class="barchart-canvas"
-          width="280"
-          height="90"
-        ></canvas>
-      </div>
-    </section>
+    <section class="feedback">
+        <div class="center-feedback">
+          <h2>Hello, We would like to hear from you!</h2>
+        </div>
+        <span class="search">
+          <input type="text" placeholder="Name" /><br />
+          <input type="email" placeholder="Email" /><br />
+          <input type="text" placeholder="Comment..." /><br />
+          <button class="send">Send</button>
+        </span>
+      </section>     
+      
 
     <footer>
       <p>Greenhouse Effect Tracker. All Rights Reserved.</p>
