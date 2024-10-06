@@ -28,7 +28,16 @@ router.get<{}, any>('/emissions-by-sector', async (req, res) => {
 
   const perSectorCsvJson = await csv().fromFile(perSectorCsv); // parsed as an array
   // console.log({ perSectorCsvJson })
-  const filtered = perSectorCsvJson.filter(item => item.Year === year && item.Entity === country);
+  // @ts-ignore
+  let filtered = [];
+  if(!year){
+    filtered = perSectorCsvJson.filter(item => item.Entity === country);
+  }else if(!country){
+    filtered = perSectorCsvJson.filter(item => item.Year === year);
+  }else{
+    filtered = perSectorCsvJson.filter(item => item.Year === year && item.Entity === country);
+  }
+
 
   res.json({
     // message: perSectorCsvJson,
