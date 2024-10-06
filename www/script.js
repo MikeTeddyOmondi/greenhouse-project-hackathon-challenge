@@ -87,3 +87,6 @@ function removeBarChartDiv() {
 
 // Initial chart creation with no data
 // createChart([], []);
+
+
+

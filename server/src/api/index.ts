@@ -17,13 +17,12 @@ router.get<{}, any>('/data', async (req, res) => {
   });
 });
 
-router.get<{}, any>('/emissions-by-sector/:year/:country', async (req, res) => {
+router.get<{}, any>('/emissions-by-sector', async (req, res) => {
 
   const perSectorCsv = "./data/global-warming-by-gas-and-source.csv";
-  // @ts-ignore
-  const year = req.params.year as string;
-  // @ts-ignore
-  const country = req.params.country as string;
+
+  const year = req.query.year as string;
+  const country = req.query.country as string;
 
   console.log({year, country})
 
